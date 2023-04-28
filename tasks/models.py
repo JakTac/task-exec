@@ -24,3 +24,17 @@ class Task(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Note(models.Model):
+    description = models.TextField(null=True)
+    created_on = models.DateTimeField(auto_now=True)
+    task = models.ForeignKey(
+        Task,
+        related_name="notes",
+        on_delete=models.CASCADE,
+        null=True,
+    )
+
+    def __str__(self):
+        return self.description

@@ -1,50 +1,48 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% block title %}
-    My Tasks
+    Project
 {% endblock title %}
-{% block customscript %}
-<script defer src="{% static 'list.js' %}"></script>
-{% endblock customscript %}
 {% block content %}
     <main>
-        <div class="my-tasks-list">
-            <h1>My Tasks</h1>
-        <div class="search-bar">
-        <form action="{% url 'search_task' %}">
-      <input type="text" placeholder="Search Tasks" name="search">
-      <button type="submit" class="w3-button w3-white w3-border w3-border-black w3-round-large"><i class="fa fa-search"></i></button>
-        </form></div>
-            <button class="btn btn-8 btn-sep"><a href="{% url 'create_task' %}"><i class="fa-solid fa-list-check"></i>Create A New Task</a></button>
-            {% if task_list|length > 0 %}
-            <p><button class="btn btn-6 btn-sep"><a href="{% url 'task_chart' %}"><i class="fa fa-bar-chart"></i>Chart View</a></button></p>
+        <div class="project-detail">
+            <h1>{{ show_project.name }}</h1>
+            <p>{{ show_project.description }}</p>
+            {% if show_project.owner == user %}
+                <button class="btn btn-9 btn-sep"><a href="{% url 'delete_project' show_project.id  %}"><i class='far fa-trash-alt'></i>Delete This Project</a></button>
+            <h2>Tasks</h2>
+            <p>
+                <button class="btn btn-8 btn-sep"><a href="{% url 'create_task' %}"><i class='fas fa-tasks'></i>Create A New Task</a></button>
+
+            </p>
             {% endif %}
-            {% if not task_list %}
-                <p>You have no tasks</p>
+            {% if not show_project.tasks.all %}
+                <p>This Project Has No Tasks</p>
             {% else %}
                 <table>
                     <thead>
                         <tr>
                             <th>Name</th>
+                            <th>Assignee</th>
                             <th>Start Date</th>
                             <th>Due Date</th>
                             <th>Is Completed</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for task in task_list %}
+                        {% for task in show_project.tasks.all %}
                             <tr>
                                 <td><a href="{% url 'show_task' task.id %}">{{ task.name }}</a></td>
+                                <td>{{ task.assignee }}</td>
                                 <td>{{ task.start_date|date:"m/j/y" }} {{ task.start_date|time:"h:i" }}</td>
                                 <td>{{ task.due_date|date:"m/j/y" }} {{ task.due_date|time:"h:i" }}</td>
                                 <td>
-                                <form class="is_completed" method="post" action="{% url 'toggle_task' task.id %}">
+                                <form method="post" action="#">
                                 {% csrf_token %}
                                 <input type="checkbox" name="is_completed" {% if task.is_completed %}checked{% endif %} />
                                 </form></td>
 
-                            </tr>
+
                         {% endfor %}
                     </tbody>
                 </table>

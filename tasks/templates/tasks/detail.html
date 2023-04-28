@@ -5,39 +5,26 @@
 {% endblock title %}
 {% block content %}
     <main>
-        <div>
-            <h1>{{ show_project.name }}</h1>
-            <p>{{ show_project.description }}</p>
-            <h2>Tasks</h2>
-            <p>
-                <a href="{% url 'create_task' %}">Create a new task</a>
-            </p>
-            {% if not show_project.tasks.all %}
-                <p>This project has no tasks</p>
-            {% else %}
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Assignee</th>
-                            <th>Start date</th>
-                            <th>Due date</th>
-                            <th>Is completed</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for task in show_project.tasks.all %}
-                            <tr>
-                                <td>{{ task.name }}</td>
-                                <td>{{ task.assignee }}</td>
-                                <td>{{ task.start_date }}</td>
-                                <td>{{ task.due_date }}</td>
-                                <td>{{ task.is_completed|yesno:"yes,no" }}</td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+        <div class="project-detail">
+            <h1>{{ task.name }}</h1>
+            {% if task.notes.all %}
+            {% for note in task.notes.all reversed %}
+                <ul>
+                    <li>
+                        <p>
+                            Added on {{note.created_on|date:"m/j/y" }} {{note.created_on|time:"h:i" }}
+                        </p>
+                        <p>
+                            {{ note.description }}
+                        </p>
+
+                    </li>
+
+                </ul>
+            {% endfor %}
             {% endif %}
+
+            <button class="btn btn-9 btn-sep"><a href="{% url 'create_note' task.id %}" ><i class='far fa-sticky-note'></i>Add Note</a></button><br><br>
+            <button class="btn btn-9 btn-sep"><a href="{% url 'delete_task' task.id %}" ><i class='far fa-trash-alt'></i>Delete This Task</a></button>
         </div>
-    </main>
 {% endblock content %}

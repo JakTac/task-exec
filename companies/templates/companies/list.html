@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Companies
+{% endblock title %}
+{% block content %}
+    <main>
+        <div class="my_company-list">
+            <h1>My Companies</h1>
+            <div class="search-bar">
+                <form action="{% url 'search_company' %}" method="get">
+                    <input type="text" placeholder="Search Companies" name="search">
+                    <button type="submit" class="w3-button w3-white w3-border w3-border-black w3-round-large"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <p>
+                {% if my_company_list|length > 0 %}
+        <button class="btn btn-8 btn-sep"><a href="{% url 'create_company' %}"><i class='far fa-building'></i>Create A New Company</a></button><br><br>
+        <button class="btn btn-5 btn-sep"><i class='fas fa-link'></i><a href="{% url 'join_company' %}">Join A Company</a></button>
+                {% endif %}
+
+            </p>
+            {% if not my_company_list %}
+                <p>You are not a part of any companies</p>
+            {% else %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Owner</th>
+                            <th>Employees</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for company in my_company_list %}
+                            <tr>
+                                <td>
+                                    <a href="{% url 'show_company' company.id %}">{{ company.name }}</a>
+                                </td>
+                                <td>{{ company.owner }}</td>
+                                <td>
+                                    {% for employee in company.employees.all %}
+                                        {{ employee.owner }}<br>
+                                    {% endfor %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+    </main>
+{% endblock content %}

@@ -1,16 +1,52 @@
-{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+        Sign Up
+        </title>
+        <link rel="stylesheet" href="{% static "css/projects.css" %}">
+        <script src="https://kit.fontawesome.com/e952425fa4.js" crossorigin="anonymous"></script>
+        <script defer src="{% static 'java.js' %}"></script>
 
-{% block title %}
-    Sign Up
-{% endblock title %}
-{% block content %}
+
+    </head>
+    <body>
+        <header>
+    <nav class="nav">
+                    <ul class ="signup-page">
+                        <li>
+                        <a href="{% url 'home_page' %}"><i class="fa-solid fa-house"></i></a>
+                        </li>
+                        <li>
+                <label class="switch">
+                 <input type="checkbox" id="darkswitch" onclick="tgl()">
+                 <span class="slider round">
+                 </span>
+                 </label>
+                </ul>
+
+            </nav>
+        </header>
     <main>
-        <div>
-            <h1>Signup</h1>
+        <div class="signup-form">
+            <h1>Sign Up</h1>
             <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button>Signup</button>
+                <button class="btn btn-8 btn-sep">Sign Up</button>
+            </form><br>
+            <li>
+            <button class="btn btn-8 btn-sep"><a href="{% url 'login' %}"><i class='fas fa-sign-in-alt'></i>Login</a></button>
+            </li>
             </div>
         </main>
-    {% endblock content %}
+         <footer>
+            <p>This task manager was brought to you by Room 92<br> 
+            <div class="footer-img"><img src="https://i.postimg.cc/K8b41nh3/92small.jpg"></div>
+        </footer>
+    </body>
+

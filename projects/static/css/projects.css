@@ -1,0 +1,677 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+/* Set all elements to use the Open Sans font */
+body {
+  /* background: url("https://i.postimg.cc/d3fdVN4r/5121062-1.png") no-repeat center fixed; */
+  background-size: cover;
+  background-position: cover;
+  font-family: 'Roboto Slab', serif;
+  font-size: 16px;
+  height: 100%;
+  margin: 10px;
+  padding: 0;
+}
+
+form {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+textarea,
+select {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* General button style */
+.btn {
+	border: none;
+  border-radius: 12px;
+	font-family: 'Lato';
+	font-size: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 5px 8px;
+	display: inline-block;
+	margin: auto;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+/* Pseudo elements for icons */
+.btn:before {
+	font-family: 'FontAwesome';
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+/* Icon separator */
+.btn-sep {
+	padding: 5px 6px 5px 6px;
+}
+
+
+.btn-sep:before {
+	background: rgba(0,0,0,0.15);
+}
+
+
+/* Button 1 */
+.btn-1,
+.btn-2,
+.btn-3,
+.btn-4,
+.btn-5,
+.btn-6,
+.btn-7,
+.btn-8,
+.btn-9
+ {
+	background: #3f4244;
+	color: #fff;
+}
+
+.btn-1:hover {
+	background: #2980b9;
+}
+
+.btn-1:active,
+.btn-2:active,
+.btn-3:active,
+.btn-4:active,
+.btn-5:active,
+.btn-6:active,
+.btn-7:active,
+.btn-8:active,
+.btn-9:active {
+	background: #2980b9;
+	top: 2px;
+}
+
+.btn-1:before,
+.btn-2:before,
+.btn-3:before,
+.btn-4:before,
+.btn-5:before,
+.btn-6:before,
+.btn-7:before,
+.btn-8:before,
+.btn-9:before {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	line-height: 3;
+	font-size: 140%;
+	width: 60px;
+}
+
+/* Button 2 */
+
+.btn-2:hover {
+	background: #27ae60;
+}
+
+/* Button 3 */
+.btn-3:hover {
+	background: #c0392b;
+}
+
+/* Button 4 */
+
+.btn-4:hover {
+	background: #2c3e50;
+}
+
+.btn-5:hover {
+	background: #b9712a;
+}
+
+
+.btn-6:hover {
+	background: #057f5e;
+}
+
+
+.btn-7:hover {
+	background: #057f5e;
+}
+
+.btn-8:hover {
+	background: #057f5e;
+}
+
+.btn-9:hover {
+  background: rgb(255, 0, 0);
+}
+
+/* Icons */
+
+.icon-cart:before {
+	content: "\f07a";
+}
+
+.icon-heart:before {
+	content: "\f55a";
+}
+
+.icon-info:before {
+	content: "\f05a";
+}
+
+.icon-send:before {
+	content: "\f1d8";
+}
+
+
+
+
+
+.logout-button,
+.tasks-button,
+.signup-button {
+  background-color: #968e8e;
+  color: black;
+  border: none;
+  border-radius: 12px;
+  padding: 50px 50px;
+  position: fixed;
+  transition-duration: 0.4s;
+  right: 35%;
+}
+
+.comp-button:hover,
+.logout-button:hover,
+.tasks-button:hover,
+.projects-button:hover,
+.login-button:hover,
+.signup-button:hover {
+  background-color: #6e816e;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  transition-duration: 0.4s;
+}
+
+.comp-button,
+.login-button,
+.projects-button {
+  background-color: #968e8e;
+  color: black;
+  border: none;
+  border-radius: 12px;
+  padding: 50px 50px;
+  position: fixed;
+  transition-duration: 0.4s;
+  left: 35%;
+}
+
+
+
+
+
+/* Set the style of the navigation list */
+nav {
+  background-color: rgb(49, 44, 44, 0.4);
+  border-bottom: 10px solid #CCC;
+  box-sizing: border-box;
+  list-style: none;
+  margin: auto;
+  margin-bottom: 2em;
+  padding: 0 0 0 1em;
+  padding-top: 1em;
+}
+
+/* Set the spacing and layout of the nav list items */
+header li {
+  display: inline;
+  margin: 0 1em;
+  padding: 1em 0 1em 0;
+  top: 180px;
+}
+
+/* Set the style of the links in the nav */
+.nav {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a {
+  color: #B8C784;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #35488d;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #B8C784;
+}
+
+.logout {
+  position: absolute;
+  right: 6%;
+  padding-left: 1em;
+  padding-right: 2em;
+}
+
+.home-page h1 {
+  text-align: center;
+}
+
+h1 {
+  color: #000;
+  text-align: center;
+}
+
+img {
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  left: 50%;
+  opacity: 0.8;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 40px;
+
+}
+
+.login-page {
+  list-style-type: none;
+}
+
+.signup-link {
+  list-style-type: none;
+  text-align: center;
+}
+
+
+
+
+/* Make the input tags look nicer */
+input {
+  height: 1.5em;
+  margin: 0;
+  padding: .25em .5em;
+}
+
+/* Make the select boxes look nicer */
+select {
+  height: 2.5em;
+}
+
+/* Make the select-multiple boxes look nicer */
+select[multiple] {
+  height: 7.5em;
+}
+
+/* Make the textarea inputs look nicer */
+textarea {
+  margin: 0;
+  padding: .25em .5em;
+}
+
+/* Set the width on all tables */
+table {
+  width: 100%;
+}
+
+/* Set the size of the help text in forms */
+.helptext {
+  display: block;
+  font-size: 80%;
+}
+
+/* Make the login and sign-up forms look nicer */
+.login-form,
+.signup-form {
+  background-color: rgb(49, 44, 44, 0.4);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  list-style-type: none;
+  margin: auto;
+  max-width: 400px;
+  padding: 2em;
+  text-align: center;
+}
+
+/* Make the task and projects forms look nicer */
+.task-form,
+.project-form,
+.delete-form {
+  background-color: rgb(49, 44, 44, 0.4);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  margin: auto;
+  max-width: 600px;
+  padding: 2em;
+}
+
+/* Make all of the headers the same */
+.task-form h1,
+.login-form h1,
+.signup-form h1,
+.project-list h1,
+.project-form h1,
+.project-detail h1,
+.delete-form h1 {
+  margin-top: 0;
+}
+
+/* Add spacing to the section of the project detail */
+.project-detail h2 {
+  margin-top: 2em;
+}
+
+/* Standardize form layout using grid */
+.task-form p,
+.login-form p,
+.signup-form p,
+.project-form p {
+  display: grid;
+  align-items: center;
+  column-gap: 10px;
+  grid-template-columns: 100px 1fr;
+}
+
+/* Standardize help text positions in the grid */
+.task-form p .helptext,
+.login-form p .helptext,
+.signup-form p .helptext,
+.project-form p .helptext {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+/* Make the buttons a little larger */
+.task-form button,
+.my-tasks-list button,
+.login-form button,
+.signup-form button,
+.project-form button {
+  padding: 0.25em 1em;
+}
+
+/* Add a nice box around the lists and details */
+
+.project-detail {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  max-width: 800px;
+  padding: 2em;
+}
+
+.my-tasks-list {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  max-width: 800px;
+  padding: 2em;
+}
+
+.my_company-list,
+.project-list {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  max-width: 800px;
+  padding: 2em;
+}
+
+
+.search-bar {
+  float: right;
+}
+
+.search-bar input[type=text] {
+  padding: 6px;
+  border: none;
+  margin: 1px 16px 16px 3px;
+  font-size: 17px;
+}
+
+
+/* Add padding to the table header and table datum tags */
+
+.my-tasks-list td,
+.project-list th,
+.project-list td,
+.project-detail th {
+  padding: .5em;
+}
+
+/* Add a bottom border to the table header tags */
+.my_company-list thead tr th,
+.my-tasks-list thead tr th,
+.project-list thead tr th,
+.project-detail thead tr th {
+  border-bottom: 2px solid #DEDEDE;
+}
+
+/* Center align the text on specific table header cells */
+.my_company-list tbody tr td,
+.my-tasks-list tbody td:nth-child(2),
+.my-tasks-list tbody td:nth-child(3),
+.my-tasks-list tbody td:nth-child(4),
+.project-list tbody tr td,
+.project-detail tbody td:nth-child(2),
+.project-detail tbody td:nth-child(3),
+.project-detail tbody td:nth-child(4),
+.project-detail tbody td:nth-child(5) {
+  text-align: center;
+}
+
+/* Add horizontal rules to all rows except the last */
+.my-tasks-list tbody :not(tr:last-child) td,
+.project-list tbody :not(tr:last-child) td,
+.project-detail tbody :not(tr:last-child) td {
+  border-bottom: 1px solid #DEDEDE;
+}
+
+
+
+
+
+/* The switch - the box around the slider */
+.switch {
+  position: absolute;
+  right: 20px;
+  width: 40px;
+  height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  /* bottom: 1px; */
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .2s;
+}
+
+input:checked+.slider {
+  background-color: #424b51;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  height: 80px;
+}
+
+.footer-img {
+  opacity: 0.5;
+  right: 6%;
+}
+
+
+
+
+html[data-theme='dark'] {
+  --background-primary: rgba(0, 0, 0, 0.9);
+  --color-primary: #ccc;
+}
+
+html {
+  transition: color 300ms, background-color 300ms;
+  background: var(--background-primary);
+  color: var(--color-primary);
+}
+
+th,
+h1,
+h2,
+p,
+a {
+  color: var(--color-primary);
+}
+
+input[type="checkbox"].toggle {
+  opacity: 0;
+  position: absolute;
+  left: -9000px;
+  top: -9000px;
+}
+
+input[type="checkbox"].toggle+label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+input[type="checkbox"].toggle+label::before {
+  content: "";
+  width: 2em;
+  height: 1em;
+  background-color: hsl(0, 80%, 90%);
+  border-radius: 1em;
+  margin-right: .25em;
+  transition: background-color 200ms ease-in-out;
+}
+
+input[type="checkbox"].toggle+label::after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  content: "\2715";
+  font-size: .5em;
+  height: .9em;
+  left: .2em;
+  width: 1.8em;
+  height: 1.8em;
+  background-color: hsl(0, 80%, 60%);
+  color: white;
+  border-radius: 1em;
+  transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+input[type="checkbox"].toggle:focus+label::before {
+  outline: 1px solid black;
+}
+
+input[type="checkbox"].toggle:checked+label::before {
+  background-color: hsl(100, 70%, 90%);
+}
+
+input[type="checkbox"].toggle:checked+label::after {
+  content: "\2713";
+  transform: translateX(100%);
+  background-color: hsl(100, 70%, 60%);
+}
+
+input[type="checkbox"].toggle:disabled+label {
+  color: #777;
+}
+
+input[type="checkbox"].toggle:disabled+label::before {
+  background-color: #CCC;
+}
+
+input[type="checkbox"].toggle:disabled+label::after {
+  background-color: #777;
+}
+
+
+@media {
+  body {
+    background-image: linear-gradient(#000, #FFF, );
+  }
+}
